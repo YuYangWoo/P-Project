@@ -1,4 +1,4 @@
-package com.example.smartdelivery.data.model.request
+package com.example.smartdelivery.data.room
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity
@@ -9,6 +9,8 @@ data class TrackingData(
     @PrimaryKey
     @ColumnInfo(name = "trackingNum")
     val trackingNum: String,
+    @ColumnInfo(name = "company")
+    val company: String,
     @ColumnInfo(name = "company_code")
     val company_code: String
 )

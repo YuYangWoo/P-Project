@@ -1,11 +1,9 @@
 package com.example.smartdelivery.ui.main.viewmodel
 
-import android.util.Log
 import androidx.lifecycle.*
-import com.example.smartdelivery.data.model.request.TrackingData
 import com.example.smartdelivery.data.model.response.CompanyList
 import com.example.smartdelivery.data.model.response.TrackingResponse
-//import com.example.smartdelivery.data.model.request.TrackingData
+//import com.example.smartdelivery.data.room.TrackingData
 import com.example.smartdelivery.data.repository.RemoteRepository
 import com.example.smartdelivery.util.Resource
 import kotlinx.coroutines.Dispatchers
@@ -22,22 +20,6 @@ class MainViewModel(private val remoteRepository: RemoteRepository) : ViewModel(
     private var _invoice = MutableLiveData<Resource<Response<TrackingResponse>>>()
     val invoice: LiveData<Resource<Response<TrackingResponse>>>
         get() = _invoice
-
-    fun insertData(trackingData: TrackingData) = liveData {
-        emit(Resource.loading(null))
-        try {
-            emit(
-                Resource.success(
-                    remoteRepository.requestTracking(
-                        trackingData.trackingNum,
-                        trackingData.company_code
-                    )
-                )
-            )
-        } catch (e: Exception) {
-            emit(Resource.error(null, e.message ?: "Error"))
-        }
-    }
 
     fun requestCompanyList() {
         viewModelScope.launch(Dispatchers.IO) {
@@ -59,7 +41,7 @@ class MainViewModel(private val remoteRepository: RemoteRepository) : ViewModel(
                 _invoice.postValue(Resource.error(null, e.message ?: "Error"))
             }
         }
-
     }
+
 
 }

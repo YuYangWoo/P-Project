@@ -3,8 +3,10 @@ package com.example.smartdelivery.ui.main.viewmodel
 import androidx.lifecycle.*
 import com.example.smartdelivery.data.model.response.CompanyList
 import com.example.smartdelivery.data.model.response.TrackingResponse
+import com.example.smartdelivery.data.repository.LocalRepository
 //import com.example.smartdelivery.data.room.TrackingData
 import com.example.smartdelivery.data.repository.RemoteRepository
+import com.example.smartdelivery.data.room.TrackingData
 import com.example.smartdelivery.util.Resource
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -43,5 +45,15 @@ class MainViewModel(private val remoteRepository: RemoteRepository) : ViewModel(
         }
     }
 
+//    var trackingList: LiveData<List<TrackingData>> = localRespository.trackingList.asLiveData()
+//
+//    fun insert(trackingData: TrackingData) = viewModelScope.launch {
+//        localRespository.insert(trackingData)
+//    }
+//
+//    val allList: LiveData<List<TrackingData>> = localRepository.allList.asLiveData()
+//    fun insertData(trackingData: TrackingData) = viewModelScope.launch(Dispatchers.IO) {
+//        localRepository.insertData(trackingData)
+//    }
 
 }

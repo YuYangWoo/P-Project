@@ -11,6 +11,7 @@ import com.example.smartdelivery.data.room.TrackingData
 import com.example.smartdelivery.databinding.FragmentAddBinding
 import com.example.smartdelivery.ui.main.view.dialog.ProgressDialog
 import com.example.smartdelivery.ui.main.viewmodel.AddViewModel
+//import com.example.smartdelivery.ui.main.viewmodel.AddViewModel
 import com.example.smartdelivery.ui.main.viewmodel.MainViewModel
 import com.example.smartdelivery.util.Resource
 import kotlinx.coroutines.Dispatchers
@@ -21,7 +22,7 @@ import java.util.*
 class AddFragment : BaseFragment<FragmentAddBinding>(R.layout.fragment_add) {
 
     private val mainViewModel: MainViewModel by sharedViewModel()
-    private val addViewModel: AddViewModel by sharedViewModel()
+//    private val addViewModel: AddViewModel by sharedViewModel()
     private val progressDialog: ProgressDialog by lazy { ProgressDialog(requireContext()) }
     private lateinit var companyList: CompanyList
     private lateinit var invoiceResult: TrackingResponse
@@ -32,15 +33,15 @@ class AddFragment : BaseFragment<FragmentAddBinding>(R.layout.fragment_add) {
         mainViewModel.requestCompanyList()
         companyObserver()
         invoiceObserver()
-        roomObserver()
+//        roomObserver()
         inqueryInvoice()
     }
 
-    private fun roomObserver() {
-        addViewModel.trackingList.observe(viewLifecycleOwner, androidx.lifecycle.Observer {
-            Log.d(TAG, "roomObserver: ${addViewModel.trackingList.value}")
-        })
-    }
+//    private fun roomObserver() {
+//        addViewModel.allList.observe(viewLifecycleOwner, androidx.lifecycle.Observer {
+//            Log.d(TAG, "roomObserver: ${addViewModel.allList.value}")
+//        })
+//    }
 
     private fun invoiceObserver() {
         mainViewModel.invoice.observe(viewLifecycleOwner, androidx.lifecycle.Observer { resource ->
@@ -51,10 +52,10 @@ class AddFragment : BaseFragment<FragmentAddBinding>(R.layout.fragment_add) {
                         200 -> {
                             invoiceResult = resource.data.body()!!
                             Log.d(TAG, "invoiceObserver: ${invoiceResult.toString()}")
-                            addViewModel.insert(TrackingData(binding.edtInvoice.text.toString(),
-                           companyList.companies[binding.spinner.selectedItemPosition].Name,
-                                companyList.companies[binding.spinner.selectedItemPosition].Code
-                                ))
+//                            addViewModel.insertData(TrackingData(binding.edtInvoice.text.toString(),
+//                           companyList.companies[binding.spinner.selectedItemPosition].Name,
+//                                companyList.companies[binding.spinner.selectedItemPosition].Code
+//                                ))
                         }
                         else -> {
                             toast(requireContext(), "${resource.data.code()} ${resource.message}")

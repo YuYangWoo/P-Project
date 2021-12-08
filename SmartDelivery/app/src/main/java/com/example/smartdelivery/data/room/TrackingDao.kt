@@ -7,13 +7,13 @@ import androidx.room.Query
 import kotlinx.coroutines.flow.Flow
 
 @Dao
-interface TrackingDao {
-    @Query("SELECT * FROM tracking_data")
-    fun getList(): Flow<List<TrackingData>>
+interface TrackingDao{
+
+    @Query("SELECT * from tracking_data")
+    fun getAll(): Flow<List<TrackingData>>
+
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
-    suspend fun insert(trackingData: TrackingData)
+    suspend fun insertData(trackingData: TrackingData)
 
-    @Query("DELETE FROM tracking_data")
-    suspend fun deleteAll()
 }

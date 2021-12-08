@@ -9,11 +9,15 @@ properties.load(project.rootProject.file('local.properties').newDataInputStream(
 
 android {
     compileSdk 31
-    configurations { implementation.exclude group: 'org.jetbrains', module: 'annotations' }
+    configurations {
+        cleanedAnnotations
+        implementation.exclude group: 'org.jetbrains', module: 'annotations'
+    }
+
     defaultConfig {
         applicationId "com.example.codingassignment"
         minSdk 21
-        targetSdk 30
+        targetSdk 31
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
@@ -88,6 +92,7 @@ dependencies {
     implementation "androidx.paging:paging-runtime:$paging_version"
 
     // Room
-    implementation("androidx.room:room-runtime:$room_version")
-    annotationProcessor("androidx.room:room-compiler:$room_version")
+    implementation "androidx.room:room-runtime:$room_version"
+    implementation "androidx.room:room-compiler:$room_version"
+    implementation "androidx.room:room-ktx:$room_version"
 }

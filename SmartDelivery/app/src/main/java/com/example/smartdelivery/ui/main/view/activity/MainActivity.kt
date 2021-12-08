@@ -8,7 +8,6 @@ import com.example.codingassignment.ui.base.BaseActivity
 import com.example.smartdelivery.R
 import com.example.smartdelivery.databinding.ActivityMainBinding
 
-
 class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main){
 
     // Fragment Attach

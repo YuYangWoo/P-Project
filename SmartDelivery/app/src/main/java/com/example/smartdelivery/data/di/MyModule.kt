@@ -5,6 +5,8 @@ import androidx.room.RoomDatabase
 import androidx.sqlite.db.SupportSQLiteDatabase
 import com.example.smartdelivery.data.repository.LocalRespository
 import com.example.smartdelivery.data.repository.RemoteRepository
+import com.example.smartdelivery.data.room.TrackingData
+import com.example.smartdelivery.data.room.TrackingDatabase
 import com.example.smartdelivery.ui.main.viewmodel.AddViewModel
 import com.example.smartdelivery.ui.main.viewmodel.MainViewModel
 import kotlinx.coroutines.CoroutineScope
@@ -23,7 +25,12 @@ val MyModule = module {
 }
 
 val dbModule = module {
-
+    single {
+        TrackingDatabase.getDatabase(androidApplication())
+    }
+    single {
+        get<TrackingDatabase>().tracingDao()
+    }
 }
 
 

@@ -32,7 +32,6 @@ class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main){
     override fun init() {
         super.init()
         initToolbar()
-
     }
 
     // 뒤로가기 이벤트

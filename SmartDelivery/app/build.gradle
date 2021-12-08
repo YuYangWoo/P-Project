@@ -9,7 +9,7 @@ properties.load(project.rootProject.file('local.properties').newDataInputStream(
 
 android {
     compileSdk 31
-
+    configurations { implementation.exclude group: 'org.jetbrains', module: 'annotations' }
     defaultConfig {
         applicationId "com.example.codingassignment"
         minSdk 21
@@ -83,5 +83,9 @@ dependencies {
     testImplementation "io.insert-koin:koin-test:$koin_version"
     // Paging
     implementation "androidx.paging:paging-runtime:$paging_version"
+
+    // Room
+    implementation "androidx.room:room-runtime:$room_version"
+    kapt "androidx.room:room-compiler:$room_version"
 
 }

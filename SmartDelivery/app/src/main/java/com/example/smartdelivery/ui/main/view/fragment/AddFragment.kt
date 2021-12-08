@@ -19,11 +19,12 @@ class AddFragment : BaseFragment<FragmentAddBinding>(R.layout.fragment_add) {
     private val TAG = "AddFragment"
     override fun init() {
         super.init()
-        requestCompanyList()
+        mainViewModel.requestCompanyList()
+        companyObserver()
     }
 
-    private fun requestCompanyList() {
-        mainViewModel.requestCompany().observe(viewLifecycleOwner, androidx.lifecycle.Observer { resource ->
+    private fun companyObserver() {
+        mainViewModel.companyList.observe(viewLifecycleOwner, androidx.lifecycle.Observer { resource ->
             when(resource.status) {
                 Resource.Status.SUCCESS -> {
                     progressDialog.dismiss()
@@ -40,6 +41,7 @@ class AddFragment : BaseFragment<FragmentAddBinding>(R.layout.fragment_add) {
                 }
                 Resource.Status.LOADING -> {
                     progressDialog.show()
+
                 }
                 Resource.Status.ERROR -> {
                     toast(requireContext(), "${resource.message}")

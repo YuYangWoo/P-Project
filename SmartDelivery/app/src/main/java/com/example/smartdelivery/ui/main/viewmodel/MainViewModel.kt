@@ -1,15 +1,22 @@
 package com.example.smartdelivery.ui.main.viewmodel
 
 import android.util.Log
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.liveData
+import androidx.lifecycle.*
 import com.example.smartdelivery.data.model.request.TrackingData
+import com.example.smartdelivery.data.model.response.CompanyList
 //import com.example.smartdelivery.data.model.request.TrackingData
 import com.example.smartdelivery.data.repository.RemoteRepository
 import com.example.smartdelivery.util.Resource
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import retrofit2.Response
 import java.lang.Exception
 
 class MainViewModel(private val remoteRepository: RemoteRepository) : ViewModel() {
+
+    private var _companyList = MutableLiveData<Resource<Response<CompanyList>>>()
+    val companyList: LiveData<Resource<Response<CompanyList>>>
+    get() = _companyList
 
     fun insertData(trackingData: TrackingData) = liveData{
         emit(Resource.loading(null))
@@ -20,14 +27,14 @@ class MainViewModel(private val remoteRepository: RemoteRepository) : ViewModel(
         }
     }
 
-    fun requestCompany() = liveData {
-        emit(Resource.loading(null))
-        try {
-            emit(Resource.success(remoteRepository.requestCompany()))
-            Log.d("viewmodel", "requestCompany:${remoteRepository.requestCompany()} ")
-        } catch (e: Exception) {
-            emit(Resource.error(null, e.message ?: "Error"))
-            Log.d("viewmodel", "requestCompany:${e.message} ")
+    fun requestCompanyList() {
+        viewModelScope.launch(Dispatchers.IO) {
+            _companyList.postValue(Resource.loading(null))
+            try {
+                _companyList.postValue(Resource.success(remoteRepository.requestCompany()))
+            } catch (e: Exception) {
+                _companyList.postValue(Resource.error(null, e.message ?: "Error"))
+            }
         }
     }
 

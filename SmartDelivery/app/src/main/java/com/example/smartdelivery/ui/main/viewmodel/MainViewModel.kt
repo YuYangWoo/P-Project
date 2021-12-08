@@ -4,6 +4,7 @@ import android.util.Log
 import androidx.lifecycle.*
 import com.example.smartdelivery.data.model.request.TrackingData
 import com.example.smartdelivery.data.model.response.CompanyList
+import com.example.smartdelivery.data.model.response.TrackingResponse
 //import com.example.smartdelivery.data.model.request.TrackingData
 import com.example.smartdelivery.data.repository.RemoteRepository
 import com.example.smartdelivery.util.Resource
@@ -16,12 +17,23 @@ class MainViewModel(private val remoteRepository: RemoteRepository) : ViewModel(
 
     private var _companyList = MutableLiveData<Resource<Response<CompanyList>>>()
     val companyList: LiveData<Resource<Response<CompanyList>>>
-    get() = _companyList
+        get() = _companyList
 
-    fun insertData(trackingData: TrackingData) = liveData{
+    private var _invoice = MutableLiveData<Resource<Response<TrackingResponse>>>()
+    val invoice: LiveData<Resource<Response<TrackingResponse>>>
+        get() = _invoice
+
+    fun insertData(trackingData: TrackingData) = liveData {
         emit(Resource.loading(null))
         try {
-            emit(Resource.success(remoteRepository.requestTracking(trackingData.trackingNum, trackingData.company_code)))
+            emit(
+                Resource.success(
+                    remoteRepository.requestTracking(
+                        trackingData.trackingNum,
+                        trackingData.company_code
+                    )
+                )
+            )
         } catch (e: Exception) {
             emit(Resource.error(null, e.message ?: "Error"))
         }
@@ -36,6 +48,18 @@ class MainViewModel(private val remoteRepository: RemoteRepository) : ViewModel(
                 _companyList.postValue(Resource.error(null, e.message ?: "Error"))
             }
         }
+    }
+
+    fun requestInvoice(t_code: String, t_invoice: String) {
+        viewModelScope.launch(Dispatchers.IO) {
+            _invoice.postValue(Resource.loading(null))
+            try {
+                _invoice.postValue(Resource.success(remoteRepository.requestTracking(t_code, t_invoice)))
+            } catch (e: Exception) {
+                _invoice.postValue(Resource.error(null, e.message ?: "Error"))
+            }
+        }
+
     }
 
 }

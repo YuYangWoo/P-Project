@@ -43,15 +43,13 @@ class MainViewModel(private val remoteRepository: RemoteRepository) : ViewModel(
         }
     }
 
-//    var trackingList: LiveData<List<TrackingData>> = localRespository.trackingList.asLiveData()
-//
-//    fun insert(trackingData: TrackingData) = viewModelScope.launch {
-//        localRespository.insert(trackingData)
-//    }
-//
-//    val allList: LiveData<List<TrackingData>> = localRepository.allList.asLiveData()
-//    fun insertData(trackingData: TrackingData) = viewModelScope.launch(Dispatchers.IO) {
-//        localRepository.insertData(trackingData)
-//    }
+    fun requestInvoiceMethod(t_code: String, t_invoice: String) = liveData {
+        emit(Resource.loading(null))
+        try {
+            emit(Resource.success(remoteRepository.requestTracking(t_code, t_invoice)))
+        } catch (e: Exception) {
+            emit(Resource.error(null, e.message ?: "Error"))
+        }
+    }
 
 }

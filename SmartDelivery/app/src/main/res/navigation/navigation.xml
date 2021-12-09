@@ -18,7 +18,11 @@
     <fragment
         android:id="@+id/addFragment"
         android:name="com.example.smartdelivery.ui.main.view.fragment.AddFragment"
-        android:label="AddFragment" />
+        android:label="AddFragment" >
+        <action
+            android:id="@+id/action_addFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+    </fragment>
     <fragment
         android:id="@+id/detailFragment"
         android:name="com.example.smartdelivery.ui.main.view.fragment.DetailFragment"

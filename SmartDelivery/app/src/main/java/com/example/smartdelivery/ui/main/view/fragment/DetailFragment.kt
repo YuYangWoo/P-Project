@@ -48,6 +48,8 @@ class DetailFragment : BaseFragment<FragmentDetailBinding>(R.layout.fragment_det
                                 }
                                 layoutManager = LinearLayoutManager(requireContext())
                             }
+                            Log.d(TAG, "initInvoiceList: ${invoiceResult}")
+                            binding.data = invoiceResult
 
                         }
                         else -> {
@@ -66,5 +68,6 @@ class DetailFragment : BaseFragment<FragmentDetailBinding>(R.layout.fragment_det
                 }
             }
         })
+
     }
 }

@@ -15,7 +15,6 @@ data class TrackingResponse(
     val productInfo: String?,
     val result: String,
     val trackingDetails: List<TrackingDetail>,
-
     val status: Boolean,
     val msg: String,
     val code: Int

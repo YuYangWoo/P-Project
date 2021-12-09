@@ -15,20 +15,15 @@ class RecyclerViewAdapter : ListAdapter<TrackingData, RecyclerViewAdapter.Delive
     inner class DeliveryHolder(private val binding : HolderDeliveryListBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(trackingData: TrackingData) {
             binding.data = trackingData
-            Log.d("MainFragment", "bind:어댑터${data.toString()} ")
         }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DeliveryHolder {
         val binding = HolderDeliveryListBinding.inflate(LayoutInflater.from(parent.context), parent, false)
-        Log.d("MainFragment", "bind:어댑터${data.toString()} ")
-
         return DeliveryHolder(binding)
     }
 
     override fun onBindViewHolder(holder: DeliveryHolder, position: Int) {
-        Log.d("MainFragment", "bind:어댑터${data.toString()} ")
-
         holder.bind(data[position])
     }
 }

@@ -11,7 +11,7 @@ import kotlinx.coroutines.flow.Flow
 interface TrackingDao{
 
     @Query("SELECT * FROM tracking_data")
-    fun getAll(): LiveData<List<TrackingData>>
+    fun getAll(): Flow<List<TrackingData>>
 
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)

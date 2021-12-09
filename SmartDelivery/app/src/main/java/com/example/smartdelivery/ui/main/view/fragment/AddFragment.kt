@@ -33,14 +33,7 @@ class AddFragment : BaseFragment<FragmentAddBinding>(R.layout.fragment_add) {
         mainViewModel.requestCompanyList()
         companyObserver()
         invoiceObserver()
-        roomDataObserver()
         inqueryInvoice()
-    }
-
-    private fun roomDataObserver() {
-        addViewModel.getData().observe(viewLifecycleOwner, androidx.lifecycle.Observer {
-            Log.d(TAG, "roomDataObserver: ${it}")
-        })
     }
 
     private fun invoiceObserver() {

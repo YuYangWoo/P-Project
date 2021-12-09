@@ -15,29 +15,30 @@ import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 
 class MainFragment : BaseFragment<FragmentMainBinding>(R.layout.fragment_main) {
 
-    private val addViewModel : AddViewModel by sharedViewModel()
+    private val addViewModel: AddViewModel by sharedViewModel()
     private val TAG = "MainFragment"
     private val recyclerAdapter = RecyclerViewAdapter()
     override fun init() {
         super.init()
-        btnAdd()
         recyclerView()
+        btnAdd()
         roomListObserver()
     }
 
+    private fun recyclerView() {
+        with(binding.recyclerView) {
+            adapter = recyclerAdapter
+            layoutManager = LinearLayoutManager(requireContext())
+        }
+    }
+
     private fun roomListObserver() {
-        addViewModel.getData().observe(viewLifecycleOwner, Observer {
-            with(binding.recyclerView) {
-                adapter = RecyclerViewAdapter().apply {
-                data = it as ArrayList<TrackingData>
-                submitList(data)
-                }
-                layoutManager = LinearLayoutManager(requireContext())
+        addViewModel.deliveryList.observe(viewLifecycleOwner, Observer { data ->
+            data.let {
+                recyclerAdapter.data = addViewModel.deliveryList.value as ArrayList<TrackingData>
+                recyclerAdapter.submitList(addViewModel.deliveryList.value as ArrayList<TrackingData>)
             }
-            Log.d(TAG, "roomListObserver: ${it}")
-            recyclerAdapter.data = it as ArrayList<TrackingData>
-            recyclerAdapter.submitList(recyclerAdapter.data)
-            Log.d(TAG, "roomListObserver: ${recyclerAdapter.data}")
+
         })
     }
 
@@ -47,13 +48,4 @@ class MainFragment : BaseFragment<FragmentMainBinding>(R.layout.fragment_main) {
         }
     }
 
-    private fun recyclerView() {
-        with(binding.recyclerView) {
-            adapter = RecyclerViewAdapter().apply {
-//                data = arrayListOf(TrackingData("dd","dd","dd","dd","dd"))
-//                submitList(data)
-            }
-            layoutManager = LinearLayoutManager(requireContext())
-        }
-    }
 }

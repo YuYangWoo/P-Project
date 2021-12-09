@@ -2,6 +2,7 @@ package com.example.smartdelivery.data.di
 
 import android.app.Application
 import androidx.room.Room
+import com.example.smartdelivery.data.repository.LocalRepository
 import com.example.smartdelivery.data.repository.RemoteRepository
 import com.example.smartdelivery.data.room.TrackingDao
 import com.example.smartdelivery.data.room.TrackingDatabase
@@ -14,7 +15,8 @@ import org.koin.dsl.module
 val MyModule = module {
     single { RemoteRepository() }
     viewModel { MainViewModel(get()) }
-    viewModel { AddViewModel(get()) }
+    viewModel { AddViewModel(get(), get()) }
+    single { LocalRepository(get()) }
 }
 
 val dbModule = module {

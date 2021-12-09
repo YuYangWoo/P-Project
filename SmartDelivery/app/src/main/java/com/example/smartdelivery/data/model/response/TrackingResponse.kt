@@ -3,7 +3,6 @@ package com.example.smartdelivery.data.model.response
 import com.google.gson.annotations.SerializedName
 import java.io.Serializable
 
-
 data class TrackingResponse(
     @SerializedName("TrackingInfo")
     val complete: Boolean,

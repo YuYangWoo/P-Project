@@ -3,6 +3,7 @@ package com.example.smartdelivery.data.room
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import com.example.smartdelivery.data.model.response.TrackingDetail
 
 @Entity(tableName = "tracking_data")
 data class TrackingData(

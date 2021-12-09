@@ -72,3 +72,4 @@ data class TrackingDetail(
     val timeString: String,
     val where: String
 ) : Serializable
+

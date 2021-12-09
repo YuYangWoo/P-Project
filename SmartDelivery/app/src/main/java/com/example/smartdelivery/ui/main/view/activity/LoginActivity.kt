@@ -13,4 +13,5 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(R.layout.activity_login
             startActivity(Intent(this, MainActivity::class.java))
         }
     }
+
 }

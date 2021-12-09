@@ -1,18 +1,14 @@
 package com.example.smartdelivery.ui.main.viewmodel
 
 import androidx.lifecycle.*
-import com.example.smartdelivery.data.repository.LocalRepository
-import com.example.smartdelivery.data.repository.RemoteRepository
+import com.example.smartdelivery.data.room.TrackingDao
 import com.example.smartdelivery.data.room.TrackingData
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
 
-class AddViewModel(private val localRepository: LocalRepository) : ViewModel() {
+class AddViewModel(private val trackingDao: TrackingDao) : ViewModel() {
 
-    val allList: LiveData<List<TrackingData>> = localRepository.allList.asLiveData()
-    fun insertData(trackingData: TrackingData) = viewModelScope.launch(Dispatchers.IO) {
-            localRepository.insertData(trackingData)
-        }
-
+   fun insertData(trackingData: TrackingData) {
+       trackingDao.insert(trackingData)
+   }
+    fun getData(): LiveData<List<TrackingData>> = trackingDao.getAll()
 
 }

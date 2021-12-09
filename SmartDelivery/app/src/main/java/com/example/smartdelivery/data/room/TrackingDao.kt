@@ -1,5 +1,6 @@
 package com.example.smartdelivery.data.room
 
+import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
@@ -9,11 +10,11 @@ import kotlinx.coroutines.flow.Flow
 @Dao
 interface TrackingDao{
 
-    @Query("SELECT * from tracking_data")
-    fun getAll(): Flow<List<TrackingData>>
+    @Query("SELECT * FROM tracking_data")
+    fun getAll(): LiveData<List<TrackingData>>
 
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
-    suspend fun insertData(trackingData: TrackingData)
+    fun insert(trackingData: TrackingData)
 
 }

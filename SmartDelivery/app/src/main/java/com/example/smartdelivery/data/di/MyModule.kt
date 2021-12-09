@@ -1,12 +1,11 @@
 package com.example.smartdelivery.data.di
 
-import com.example.smartdelivery.data.repository.LocalRepository
+import android.app.Application
+import androidx.room.Room
 import com.example.smartdelivery.data.repository.RemoteRepository
+import com.example.smartdelivery.data.room.TrackingDao
 import com.example.smartdelivery.data.room.TrackingDatabase
-import com.example.smartdelivery.ui.main.viewmodel.AddViewModel
 import com.example.smartdelivery.ui.main.viewmodel.MainViewModel
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.SupervisorJob
 import org.koin.android.ext.koin.androidApplication
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
@@ -17,15 +16,16 @@ val MyModule = module {
 }
 
 val dbModule = module {
-    val applicationScope = CoroutineScope(SupervisorJob())
-    single {
-        TrackingDatabase.getDatabase(androidApplication())
+    fun provideDatabase(application: Application): TrackingDatabase {
+        return Room.databaseBuilder(application, TrackingDatabase::class.java,"tracking_data")
+            .fallbackToDestructiveMigration().build()
     }
-    single {
-        get<TrackingDatabase>().trackingDao()
+
+    fun provideDao(dataBase: TrackingDatabase): TrackingDao {
+        return dataBase.trackingDao()
     }
-    single { LocalRepository(get()) }
-    viewModel { AddViewModel(get()) }
+    single {provideDatabase(androidApplication())}
+    single {provideDao(get())}
 }
 
 

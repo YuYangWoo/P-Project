@@ -22,7 +22,7 @@ import java.util.*
 class AddFragment : BaseFragment<FragmentAddBinding>(R.layout.fragment_add) {
 
     private val mainViewModel: MainViewModel by sharedViewModel()
-//    private val addViewModel: AddViewModel by sharedViewModel()
+    private val addViewModel: AddViewModel by sharedViewModel()
     private val progressDialog: ProgressDialog by lazy { ProgressDialog(requireContext()) }
     private lateinit var companyList: CompanyList
     private lateinit var invoiceResult: TrackingResponse

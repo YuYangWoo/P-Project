@@ -5,7 +5,8 @@
       <map>
         <entry key="..\:/Users/Admin/Desktop/P-Project/SmartDelivery/app/src/main/res/layout/activity_main.xml" value="0.36614583333333334" />
         <entry key="..\:/Users/Admin/Desktop/P-Project/SmartDelivery/app/src/main/res/layout/fragment_add.xml" value="0.278125" />
-        <entry key="..\:/Users/Admin/Desktop/P-Project/SmartDelivery/app/src/main/res/layout/fragment_main.xml" value="0.25" />
+        <entry key="..\:/Users/Admin/Desktop/P-Project/SmartDelivery/app/src/main/res/layout/fragment_main.xml" value="0.22" />
+        <entry key="..\:/Users/Admin/Desktop/P-Project/SmartDelivery/app/src/main/res/layout/holder_delivery_list.xml" value="0.21822916666666667" />
       </map>
     </option>
   </component>

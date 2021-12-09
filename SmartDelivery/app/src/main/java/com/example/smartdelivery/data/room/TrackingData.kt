@@ -12,5 +12,9 @@ data class TrackingData(
     @ColumnInfo(name = "company")
     val company: String,
     @ColumnInfo(name = "company_code")
-    val company_code: String
+    val company_code: String,
+    @ColumnInfo(name = "itemName")
+    val itemName: String,
+    @ColumnInfo(name = "complete")
+    val complete: String?
 )

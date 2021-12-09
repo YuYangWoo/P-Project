@@ -17,9 +17,7 @@ import com.example.smartdelivery.util.Resource
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
-import java.util.*
 
 class AddFragment : BaseFragment<FragmentAddBinding>(R.layout.fragment_add) {
 
@@ -59,7 +57,9 @@ class AddFragment : BaseFragment<FragmentAddBinding>(R.layout.fragment_add) {
                                     TrackingData(
                                         binding.edtInvoice.text.toString(),
                                         companyList.companies[binding.spinner.selectedItemPosition].Name,
-                                        companyList.companies[binding.spinner.selectedItemPosition].Code
+                                        companyList.companies[binding.spinner.selectedItemPosition].Code,
+                                        invoiceResult.itemName,
+                                        invoiceResult.complete
                                     )
                                 )
                             }

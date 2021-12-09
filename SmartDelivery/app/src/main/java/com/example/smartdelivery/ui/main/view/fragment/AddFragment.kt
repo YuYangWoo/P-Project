@@ -14,7 +14,9 @@ import com.example.smartdelivery.ui.main.viewmodel.AddViewModel
 //import com.example.smartdelivery.ui.main.viewmodel.AddViewModel
 import com.example.smartdelivery.ui.main.viewmodel.MainViewModel
 import com.example.smartdelivery.util.Resource
+import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 import java.util.*
@@ -33,29 +35,35 @@ class AddFragment : BaseFragment<FragmentAddBinding>(R.layout.fragment_add) {
         mainViewModel.requestCompanyList()
         companyObserver()
         invoiceObserver()
-//        roomObserver()
+        roomDataObserver()
         inqueryInvoice()
     }
 
-//    private fun roomObserver() {
-//        addViewModel.allList.observe(viewLifecycleOwner, androidx.lifecycle.Observer {
-//            Log.d(TAG, "roomObserver: ${addViewModel.allList.value}")
-//        })
-//    }
+    private fun roomDataObserver() {
+        addViewModel.getData().observe(viewLifecycleOwner, androidx.lifecycle.Observer {
+            Log.d(TAG, "roomDataObserver: ${it}")
+        })
+    }
 
     private fun invoiceObserver() {
         mainViewModel.invoice.observe(viewLifecycleOwner, androidx.lifecycle.Observer { resource ->
-            when(resource.status) {
+            when (resource.status) {
                 Resource.Status.SUCCESS -> {
                     progressDialog.dismiss()
-                    when(resource.data!!.code()) {
+                    when (resource.data!!.code()) {
                         200 -> {
                             invoiceResult = resource.data.body()!!
                             Log.d(TAG, "invoiceObserver: ${invoiceResult.toString()}")
-//                            addViewModel.insertData(TrackingData(binding.edtInvoice.text.toString(),
-//                           companyList.companies[binding.spinner.selectedItemPosition].Name,
-//                                companyList.companies[binding.spinner.selectedItemPosition].Code
-//                                ))
+                            CoroutineScope(Dispatchers.IO).launch {
+                                addViewModel.insertData(
+                                    TrackingData(
+                                        binding.edtInvoice.text.toString(),
+                                        companyList.companies[binding.spinner.selectedItemPosition].Name,
+                                        companyList.companies[binding.spinner.selectedItemPosition].Code
+                                    )
+                                )
+                            }
+
                         }
                         else -> {
                             toast(requireContext(), "${resource.data.code()} ${resource.message}")
@@ -76,37 +84,49 @@ class AddFragment : BaseFragment<FragmentAddBinding>(R.layout.fragment_add) {
     }
 
     private fun companyObserver() {
-        mainViewModel.companyList.observe(viewLifecycleOwner, androidx.lifecycle.Observer { resource ->
-            when(resource.status) {
-                Resource.Status.SUCCESS -> {
-                    progressDialog.dismiss()
-                    when(resource.data!!.code()) {
-                        200 -> {
-                            companyList = resource.data.body()!!
-                            val spinnerAdapter = ArrayAdapter<Company>(requireContext(), android.R.layout.simple_spinner_item, companyList.companies)
-                            binding.spinner.adapter = spinnerAdapter
-                        }
-                        else -> {
-                            toast(requireContext(), "${resource.data.code()} ${resource.message}")
+        mainViewModel.companyList.observe(
+            viewLifecycleOwner,
+            androidx.lifecycle.Observer { resource ->
+                when (resource.status) {
+                    Resource.Status.SUCCESS -> {
+                        progressDialog.dismiss()
+                        when (resource.data!!.code()) {
+                            200 -> {
+                                companyList = resource.data.body()!!
+                                val spinnerAdapter = ArrayAdapter<Company>(
+                                    requireContext(),
+                                    android.R.layout.simple_spinner_item,
+                                    companyList.companies
+                                )
+                                binding.spinner.adapter = spinnerAdapter
+                            }
+                            else -> {
+                                toast(
+                                    requireContext(),
+                                    "${resource.data.code()} ${resource.message}"
+                                )
+                            }
                         }
                     }
-                }
-                Resource.Status.LOADING -> {
-                    progressDialog.show()
+                    Resource.Status.LOADING -> {
+                        progressDialog.show()
 
+                    }
+                    Resource.Status.ERROR -> {
+                        toast(requireContext(), "${resource.message}")
+                        Log.d(TAG, "requestCompanyList: ${resource.message}")
+                        progressDialog.dismiss()
+                    }
                 }
-                Resource.Status.ERROR -> {
-                    toast(requireContext(), "${resource.message}")
-                    Log.d(TAG, "requestCompanyList: ${resource.message}")
-                    progressDialog.dismiss()
-                }
-            }
-        })
+            })
     }
 
     private fun inqueryInvoice() {
         binding.btnInsert.setOnClickListener {
-            mainViewModel.requestInvoice(companyList.companies[binding.spinner.selectedItemPosition].Code, binding.edtInvoice.text.toString())
+            mainViewModel.requestInvoice(
+                companyList.companies[binding.spinner.selectedItemPosition].Code,
+                binding.edtInvoice.text.toString()
+            )
         }
     }
 

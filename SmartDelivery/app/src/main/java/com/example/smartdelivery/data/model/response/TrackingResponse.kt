@@ -6,7 +6,7 @@ import java.io.Serializable
 
 data class TrackingResponse(
     @SerializedName("TrackingInfo")
-    val complete: String?,
+    val complete: Boolean,
     val estimate: String?,
     val invoiceNo: String,
     val itemName: String,
@@ -24,19 +24,19 @@ data class TrackingResponse(
 
     fun isSuccessful() = code == 0
 
-    fun toTrackingInfo(): TrackingInfo {
-        return TrackingInfo(
-            complete,
-            estimate,
-            invoiceNo,
-            itemName,
-            level,
-            orderNumber1,
-            productInfo,
-            result,
-            trackingDetails
-        )
-    }
+//    fun toTrackingInfo(): TrackingInfo {
+//        return TrackingInfo(
+//            complete,
+//            estimate,
+//            invoiceNo,
+//            itemName,
+//            level,
+//            orderNumber1,
+//            productInfo,
+//            result,
+//            trackingDetails
+//        )
+//    }
 
     fun toError(): TrackingError {
         return TrackingError(
@@ -49,7 +49,7 @@ data class TrackingResponse(
 
 data class TrackingInfo(
     @SerializedName("TrackingInfo")
-    val complete: String?,
+    val complete: Boolean,
     val estimate: String?,
     val invoiceNo: String,
     val itemName: String,

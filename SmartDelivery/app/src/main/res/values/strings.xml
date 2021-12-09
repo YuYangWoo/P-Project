@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Smart Delivery</string>
+    <string name="complete">배송완료</string>
+    <string name="ing">배송중</string>
 </resources>

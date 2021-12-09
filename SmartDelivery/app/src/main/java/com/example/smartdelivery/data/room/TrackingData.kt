@@ -16,5 +16,5 @@ data class TrackingData(
     @ColumnInfo(name = "itemName")
     val itemName: String,
     @ColumnInfo(name = "complete")
-    val complete: String?
+    val complete: Boolean
 )

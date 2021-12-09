@@ -37,6 +37,7 @@ class MainFragment : BaseFragment<FragmentMainBinding>(R.layout.fragment_main) {
             data.let {
                 recyclerAdapter.data = addViewModel.deliveryList.value as ArrayList<TrackingData>
                 recyclerAdapter.submitList(addViewModel.deliveryList.value as ArrayList<TrackingData>)
+                Log.d(TAG, "roomListObserver: ${addViewModel.deliveryList.value}")
             }
 
         })

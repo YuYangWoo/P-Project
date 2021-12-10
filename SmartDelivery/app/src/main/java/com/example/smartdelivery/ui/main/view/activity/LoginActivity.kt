@@ -11,6 +11,7 @@ import com.example.smartdelivery.databinding.ActivityLoginBinding
 import com.example.smartdelivery.ui.main.view.dialog.ProgressDialog
 import com.example.smartdelivery.ui.main.viewmodel.LoginViewModel
 import com.example.smartdelivery.util.Resource
+import kotlinx.android.synthetic.main.activity_login.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class LoginActivity : BaseActivity<ActivityLoginBinding>(R.layout.activity_login) {
@@ -31,6 +32,9 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(R.layout.activity_login
 
         binding.button.setOnClickListener {
             startActivity(Intent(this, MainActivity::class.java))
+        }
+        btnSignup.setOnClickListener{
+            startActivity(Intent(this, SignupActivity::class.java))
         }
     }
 
@@ -104,7 +108,7 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(R.layout.activity_login
             MySharedPreferences.setUserId(this@LoginActivity, binding.edtId.editText!!.text.toString())
             MySharedPreferences.setUserPass(this@LoginActivity, binding.edtPassword.editText!!.text.toString())
 //            MySharedPreferences.setLoginInformation(this@LoginActivity, loginResponse)
-            startActivity(Intent(this@LoginActivity, MainActivity::class.java))
+            startActivity(Intent(this@LoginActivity, MenuActivity::class.java))
             finish()
         }
     }

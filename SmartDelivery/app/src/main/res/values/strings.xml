@@ -4,8 +4,19 @@
     <string name="ing">배송중</string>
     <string name="id">아이디</string>
     <string name="password">비밀번호</string>
+    <string name="eamil">이메일</string>
+    <string name="address">주소</string>
+    <string name="phone">핸드폰번호</string>
+    <string name="name">이름</string>
     <string name="login">로그인</string>
+    <string name="signup">회원가입</string>
     <string name="auto_login">자동로그인</string>
     <string name="connect_fail">연결실패</string>
     <string name="confirm_login">님 로그인 되었습니다.</string>
+    <string name="menu_arrive">도착확인</string>
+    <string name="menu_invoice">송장확인</string>
+    <string name="menu_loss">분실확인 </string>
+    <string name="receive">수령확인</string>
+    <string name="loss_item">분실된 택배가 없습니다. </string>
+    
 </resources>

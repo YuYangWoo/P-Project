@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="111dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintBottom_toTopOf="@+id/scrollView4"
+            app:layout_constraintStart_toStartOf="@+id/scrollView4"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/cupping" />
+
+        <ScrollView
+            android:id="@+id/scrollView4"
+            android:fillViewport="true"
+            android:windowSoftInputMode="adjustPan"
+            android:layout_width="395dp"
+            android:layout_height="572dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="86dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView3">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <EditText
+                    android:id="@+id/userid"
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:text="@string/id"
+                    android:layout_marginBottom="20dp"
+                    android:layout_marginTop="20dp"/>
+
+                <EditText
+                    android:id="@+id/userpw"
+                    android:layout_width="match_parent"
+                   android:text="@string/password"
+                    android:ems="10"
+                    android:layout_height="70dp"
+                    android:inputType="textPersonName"
+                    android:layout_marginBottom="20dp"
+                    android:layout_marginTop="10dp"/>
+
+
+                <EditText
+                    android:id="@+id/username"
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:text="@string/name"
+                    android:layout_marginBottom="20dp"
+                    android:layout_marginTop="10dp"/>
+
+                <EditText
+                    android:id="@+id/userphone"
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:text="@string/phone"
+                    android:layout_marginBottom="20dp"
+                    android:layout_marginTop="10dp"/>
+
+                <EditText
+                    android:id="@+id/useraddress"
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:text="@string/address"
+                    android:layout_marginBottom="20dp"
+                    android:layout_marginTop="10dp"/>
+
+                <EditText
+                    android:id="@+id/useremail"
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:text="@string/eamil"
+                    android:layout_marginBottom="20dp"
+                    android:layout_marginTop="10dp"/>
+            </LinearLayout>
+        </ScrollView>
+
+        <android.widget.Button
+            android:id="@+id/sign_btn"
+            android:layout_width="343dp"
+            android:layout_height="54dp"
+
+            android:background="@color/mainColor"
+            android:text="@string/signup"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/scrollView4"
+            app:layout_constraintVertical_bias="0.974" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+

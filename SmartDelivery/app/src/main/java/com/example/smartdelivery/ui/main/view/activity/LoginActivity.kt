@@ -29,19 +29,12 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(R.layout.activity_login
         checkAutoLogin()
         btnLogin()
         checkBox()
-        binding.button.setOnClickListener {
-            startActivity(Intent(this, MainActivity::class.java))
-        }
+
         binding.btnSignup.setOnClickListener{
             startActivity(Intent(this, SignupActivity::class.java))
         }
-        binding.btnGoMenu.setOnClickListener{
-            startActivity(Intent(this,MenuActivity::class.java))
-        }
 
     }
-
-
 
     // 자동 로그인
     private fun checkAutoLogin() {

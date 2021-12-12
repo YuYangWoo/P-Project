@@ -29,9 +29,9 @@ public class SingleItemView extends LinearLayout {
         LayoutInflater inflater=(LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         inflater.inflate(R.layout.single_item_list,this,true);
 
-        single_num=findViewById(R.id.single_num);
+       single_num=findViewById(R.id.single_num);
         single_time=findViewById(R.id.single_time);
-        single_img=findViewById(R.id.single_img);
+        //single_img=findViewById(R.id.single_img);
     }
 
     public static void setNum(String num){

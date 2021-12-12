@@ -59,8 +59,8 @@ public class SignupActivity extends AppCompatActivity {
                             if(success) {
 
                                 Toast.makeText( getApplicationContext(), "성공", Toast.LENGTH_SHORT ).show();
-                                Intent intent = new Intent( SignupActivity.this, testActivity.class );
-                                startActivity( intent );
+//                                Intent intent = new Intent( SignupActivity.this, testActivity.class );
+//                                startActivity( intent );
 
 
                                 //회원가입 실패시

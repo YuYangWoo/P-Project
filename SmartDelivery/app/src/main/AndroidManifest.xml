@@ -21,6 +21,7 @@
 
         </activity>
         <activity android:name=".ui.main.view.activity.LoginActivity"
+            android:theme="@style/SplashTheme"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

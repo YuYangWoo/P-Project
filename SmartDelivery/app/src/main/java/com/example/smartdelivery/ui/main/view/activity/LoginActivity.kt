@@ -2,7 +2,7 @@ package com.example.smartdelivery.ui.main.view.activity
 
 import android.content.Intent
 import android.util.Log
-import com.example.codingassignment.ui.base.BaseActivity
+import com.example.smartdelivery.ui.base.BaseActivity
 import com.example.smartdelivery.R
 import com.example.smartdelivery.data.model.request.LoginRequest
 import com.example.smartdelivery.data.model.response.LoginResponse
@@ -39,8 +39,6 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(R.layout.activity_login
         btn_go_menu.setOnClickListener{
             startActivity(Intent(this,MenuActivity::class.java))
         }
-
-
 
     }
 

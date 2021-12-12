@@ -1,4 +1,4 @@
-package com.example.codingassignment.ui.base
+package com.example.smartdelivery.ui.base
 
 import android.content.Context
 import android.os.Bundle
@@ -7,13 +7,19 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
+import com.example.smartdelivery.R
 
 abstract class BaseActivity<VB : ViewDataBinding>(private val layoutId: Int) : AppCompatActivity() {
     lateinit var binding: VB
     private val TAG = "BASEACTIVITY"
     override fun onCreate(savedInstanceState: Bundle?) {
+        splash()
         super.onCreate(savedInstanceState)
         init()
+    }
+
+    private fun splash() {
+        setTheme(R.style.Theme_SmartDelivery)
     }
 
     protected open fun init() {

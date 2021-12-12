@@ -19,6 +19,7 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(R.layout.activity_login
     private var loginResponse = LoginResponse()
     private var loginRequest = LoginRequest()
     private val loginViewModel: LoginViewModel by viewModel()
+
     private val dialog by lazy {
         ProgressDialog(this)
     }

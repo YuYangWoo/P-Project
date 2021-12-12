@@ -9,6 +9,7 @@ import com.example.smartdelivery.data.room.TrackingDatabase
 import com.example.smartdelivery.ui.main.viewmodel.AddViewModel
 import com.example.smartdelivery.ui.main.viewmodel.LoginViewModel
 import com.example.smartdelivery.ui.main.viewmodel.MainViewModel
+import com.example.smartdelivery.ui.main.viewmodel.SignupViewModel
 import org.koin.android.ext.koin.androidApplication
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
@@ -18,6 +19,7 @@ val MyModule = module {
     viewModel { MainViewModel(get()) }
     viewModel { AddViewModel(get(), get()) }
     viewModel {LoginViewModel(get())}
+    viewModel {SignupViewModel(get())}
     single { LocalRepository(get()) }
 }
 

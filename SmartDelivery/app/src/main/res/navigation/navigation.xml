@@ -7,7 +7,7 @@
     <fragment
         android:id="@+id/mainFragment"
         android:name="com.example.smartdelivery.ui.main.view.fragment.MainFragment"
-        android:label="MainFragment" >
+        android:label="Parcel Protect">
         <action
             android:id="@+id/action_mainFragment_to_addFragment"
             app:destination="@id/addFragment" />
@@ -18,7 +18,7 @@
     <fragment
         android:id="@+id/addFragment"
         android:name="com.example.smartdelivery.ui.main.view.fragment.AddFragment"
-        android:label="AddFragment" >
+        android:label="송장 확인">
         <action
             android:id="@+id/action_addFragment_to_mainFragment"
             app:destination="@id/mainFragment" />
@@ -26,7 +26,7 @@
     <fragment
         android:id="@+id/detailFragment"
         android:name="com.example.smartdelivery.ui.main.view.fragment.DetailFragment"
-        android:label="DetailFragment" >
+        android:label="송장 확인">
         <argument
             android:name="company"
             app:argType="string" />

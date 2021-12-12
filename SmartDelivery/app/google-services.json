@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "729729141665",
+    "firebase_url": "https://p-project-c02d7-default-rtdb.firebaseio.com",
+    "project_id": "p-project-c02d7",
+    "storage_bucket": "p-project-c02d7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:729729141665:android:23a591fa9dc99f18bb99e0",
+        "android_client_info": {
+          "package_name": "com.example.smartdelivery"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "729729141665-grl462qdak9m5tmkll5epprrvpldvpdc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDaHw6-A7Zi6iA2gtwMuhmM-odDEhzyhE8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "729729141665-grl462qdak9m5tmkll5epprrvpldvpdc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

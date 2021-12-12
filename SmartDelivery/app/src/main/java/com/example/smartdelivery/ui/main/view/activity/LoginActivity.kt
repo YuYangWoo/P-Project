@@ -36,6 +36,12 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(R.layout.activity_login
         btnSignup.setOnClickListener{
             startActivity(Intent(this, SignupActivity::class.java))
         }
+        btn_go_menu.setOnClickListener{
+            startActivity(Intent(this,MenuActivity::class.java))
+        }
+
+
+
     }
 
     // 자동 로그인

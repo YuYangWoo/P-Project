@@ -16,5 +16,7 @@
     <string name="menu_arrive">도착확인</string>
     <string name="menu_invoice">송장확인</string>
     <string name="menu_loss">분실확인 </string>
+    <string name="receive">수령확인</string>
+    <string name="loss_item">분실된 택배가 없습니다. </string>
     
 </resources>

@@ -4,6 +4,26 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="0dp"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/mainColor"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            style="@style/BaseText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="도착상세정보 "
+            android:textColor="@color/white"
+       />/>
+
+
+    </com.google.android.material.appbar.MaterialToolbar>
 
     <ImageView
         android:id="@+id/img_2"
@@ -15,5 +35,13 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.258"
         app:srcCompat="@drawable/img_test" />
+
+    <androidx.gridlayout.widget.GridLayout
+        android:layout_width="403dp"
+        android:layout_height="360dp"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="394dp">
+
+    </androidx.gridlayout.widget.GridLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

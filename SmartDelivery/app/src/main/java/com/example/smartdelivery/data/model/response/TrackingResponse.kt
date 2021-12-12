@@ -8,7 +8,7 @@ data class TrackingResponse(
     val complete: Boolean,
     val estimate: String?,
     val invoiceNo: String,
-    val itemName: String,
+    val itemName: String ="이름 미확인",
     val level: String,
     val orderNumber1: String?,
     val productInfo: String?,

@@ -1,7 +1,6 @@
 package com.example.smartdelivery.ui.main.view.fragment
 
 import android.util.Log
-import android.widget.LinearLayout
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -17,7 +16,7 @@ class MainFragment : BaseFragment<FragmentMainBinding>(R.layout.fragment_main) {
 
     private val addViewModel: AddViewModel by sharedViewModel()
     private val TAG = "MainFragment"
-    private val recyclerAdapter = RecyclerViewAdapter()
+    private val recyclerAdapter by lazy { RecyclerViewAdapter(addViewModel) }
     override fun init() {
         super.init()
         recyclerView()

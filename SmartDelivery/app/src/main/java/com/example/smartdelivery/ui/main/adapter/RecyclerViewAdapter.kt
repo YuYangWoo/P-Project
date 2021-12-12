@@ -1,20 +1,21 @@
 package com.example.smartdelivery.ui.main.adapter
 
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
-import androidx.navigation.fragment.NavHostFragment
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.example.smartdelivery.R
 import com.example.smartdelivery.data.room.TrackingData
 import com.example.smartdelivery.databinding.HolderDeliveryListBinding
 import com.example.smartdelivery.ui.main.view.fragment.MainFragmentDirections
+import com.example.smartdelivery.ui.main.viewmodel.AddViewModel
 import com.example.smartdelivery.util.Diff
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
-class RecyclerViewAdapter : ListAdapter<TrackingData, RecyclerViewAdapter.DeliveryHolder>(Diff) {
+class RecyclerViewAdapter(private val addViewModel: AddViewModel) :
+    ListAdapter<TrackingData, RecyclerViewAdapter.DeliveryHolder>(Diff) {
 
     var data = ArrayList<TrackingData>()
 
@@ -32,6 +33,19 @@ class RecyclerViewAdapter : ListAdapter<TrackingData, RecyclerViewAdapter.Delive
                         data[adapterPosition].trackingNum
                     )
                 )
+            }
+            binding.btnClose.setOnClickListener {
+                CoroutineScope(Dispatchers.IO).launch {
+                    addViewModel.deleteData(
+                        TrackingData(
+                            binding.data!!.trackingNum,
+                            binding.data!!.company,
+                            binding.data!!.company_code,
+                            binding.data!!.itemName,
+                            binding.data!!.complete
+                        )
+                    )
+                }
             }
         }
     }

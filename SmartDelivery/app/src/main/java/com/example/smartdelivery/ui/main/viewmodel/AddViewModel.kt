@@ -15,4 +15,8 @@ class AddViewModel(private val trackingDao: TrackingDao, private val localReposi
         trackingDao.insert(trackingData)
     }
 
+    fun deleteData(trackingData: TrackingData) {
+        trackingDao.delete(trackingData)
+    }
+
 }

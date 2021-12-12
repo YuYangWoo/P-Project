@@ -23,6 +23,7 @@ public class MenuActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
         findViewById(R.id.menuinvoice).setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {

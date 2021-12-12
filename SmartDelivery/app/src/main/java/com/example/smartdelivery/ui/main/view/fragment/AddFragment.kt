@@ -1,9 +1,10 @@
 package com.example.smartdelivery.ui.main.view.fragment
 
+//import com.example.smartdelivery.ui.main.viewmodel.AddViewModel
 import android.util.Log
 import android.widget.ArrayAdapter
+import android.widget.TextView
 import androidx.lifecycle.Observer
-import androidx.navigation.fragment.findNavController
 import com.example.codingassignment.ui.base.BaseFragment
 import com.example.smartdelivery.R
 import com.example.smartdelivery.data.model.response.Company
@@ -13,7 +14,6 @@ import com.example.smartdelivery.data.room.TrackingData
 import com.example.smartdelivery.databinding.FragmentAddBinding
 import com.example.smartdelivery.ui.main.view.dialog.ProgressDialog
 import com.example.smartdelivery.ui.main.viewmodel.AddViewModel
-//import com.example.smartdelivery.ui.main.viewmodel.AddViewModel
 import com.example.smartdelivery.ui.main.viewmodel.MainViewModel
 import com.example.smartdelivery.util.Resource
 import kotlinx.coroutines.CoroutineScope
@@ -35,49 +35,8 @@ class AddFragment : BaseFragment<FragmentAddBinding>(R.layout.fragment_add) {
         mainViewModel.requestCompanyList()
         companyObserver()
         inqueryInvoice()
+        requireActivity().findViewById<TextView>(R.id.txtToolbar).text = "송장 확인"
     }
-//
-//    private fun invoiceObserver() {
-//        mainViewModel.invoice.observe(viewLifecycleOwner, androidx.lifecycle.Observer { resource ->
-//            when (resource.status) {
-//                Resource.Status.SUCCESS -> {
-//                    progressDialog.dismiss()
-//                    when (resource.data!!.code()) {
-//                        200 -> {
-//                            invoiceResult = resource.data.body()!!
-//                            Log.d(TAG, "invoiceObserver: ${invoiceResult.toString()}")
-//                            CoroutineScope(Dispatchers.IO).launch {
-//                                addViewModel.insertData(
-//                                    TrackingData(
-//                                        binding.edtInvoice.text.toString(),
-//                                        companyList.companies[binding.spinner.selectedItemPosition].Name,
-//                                        companyList.companies[binding.spinner.selectedItemPosition].Code,
-//                                        invoiceResult.itemName,
-//                                        invoiceResult.complete
-//                                    )
-//                                )
-//                            }
-//                                findNavController().navigate(AddFragmentDirections.actionAddFragmentToMainFragment())
-//
-//                        }
-//                        else -> {
-//                            toast(requireContext(), "${resource.data.code()} ${resource.message}")
-//                        }
-//                    }
-//                }
-//                Resource.Status.LOADING -> {
-//                    progressDialog.show()
-//
-//                }
-//                Resource.Status.ERROR -> {
-//                    toast(requireContext(), "${resource.message}")
-//                    Log.d(TAG, "requestCompanyList: ${resource.message}")
-//                    progressDialog.dismiss()
-//                }
-//            }
-//        })
-//
-//    }
 
     private fun companyObserver() {
         mainViewModel.companyList.observe(

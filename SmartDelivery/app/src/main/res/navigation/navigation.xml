@@ -6,8 +6,7 @@
 
     <fragment
         android:id="@+id/mainFragment"
-        android:name="com.example.smartdelivery.ui.main.view.fragment.MainFragment"
-        android:label="MainFragment" >
+        android:name="com.example.smartdelivery.ui.main.view.fragment.MainFragment">
         <action
             android:id="@+id/action_mainFragment_to_addFragment"
             app:destination="@id/addFragment" />
@@ -17,16 +16,14 @@
     </fragment>
     <fragment
         android:id="@+id/addFragment"
-        android:name="com.example.smartdelivery.ui.main.view.fragment.AddFragment"
-        android:label="AddFragment" >
+        android:name="com.example.smartdelivery.ui.main.view.fragment.AddFragment">
         <action
             android:id="@+id/action_addFragment_to_mainFragment"
             app:destination="@id/mainFragment" />
     </fragment>
     <fragment
         android:id="@+id/detailFragment"
-        android:name="com.example.smartdelivery.ui.main.view.fragment.DetailFragment"
-        android:label="DetailFragment" >
+        android:name="com.example.smartdelivery.ui.main.view.fragment.DetailFragment">
         <argument
             android:name="company"
             app:argType="string" />

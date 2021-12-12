@@ -2,12 +2,12 @@ package com.example.smartdelivery.ui.main.view.activity
 
 import android.content.Intent
 import android.util.Log
-import com.example.codingassignment.ui.base.BaseActivity
 import com.example.smartdelivery.R
 import com.example.smartdelivery.data.model.request.LoginRequest
 import com.example.smartdelivery.data.model.response.LoginResponse
 import com.example.smartdelivery.data.shared.MySharedPreferences
 import com.example.smartdelivery.databinding.ActivityLoginBinding
+import com.example.smartdelivery.ui.base.BaseActivity
 import com.example.smartdelivery.ui.main.view.dialog.ProgressDialog
 import com.example.smartdelivery.ui.main.viewmodel.LoginViewModel
 import com.example.smartdelivery.util.Resource
@@ -31,17 +31,9 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(R.layout.activity_login
         btnLogin()
         checkBox()
 
-        binding.button.setOnClickListener {
-            startActivity(Intent(this, MainActivity::class.java))
-        }
-        btnSignup.setOnClickListener{
+        binding.btnSignup.setOnClickListener{
             startActivity(Intent(this, SignupActivity::class.java))
         }
-        btn_go_menu.setOnClickListener{
-            startActivity(Intent(this,MenuActivity::class.java))
-        }
-
-
 
     }
 
@@ -82,6 +74,7 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(R.layout.activity_login
                         dialog.show()
                     }
                     Resource.Status.ERROR -> {
+                        Log.d(TAG, "initViewModel: ${resource.message}")
                         dialog.dismiss()
                     }
                 }
@@ -103,8 +96,11 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(R.layout.activity_login
     // 로그인 버튼 클릭
     private fun btnLogin() {
         binding.btnLogin.setOnClickListener {
+            val token = intent.getStringExtra("token")
+            Log.d(TAG, "btnLogin: token is ${token}")
             loginRequest.id = binding.edtId.editText!!.text.toString()
             loginRequest.password = binding.edtPassword.editText!!.text.toString()
+            loginRequest.token = token
             initViewModel()
         }
     }

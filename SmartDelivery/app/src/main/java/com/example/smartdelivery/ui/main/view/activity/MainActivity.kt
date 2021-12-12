@@ -4,9 +4,9 @@ import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
-import com.example.codingassignment.ui.base.BaseActivity
 import com.example.smartdelivery.R
 import com.example.smartdelivery.databinding.ActivityMainBinding
+import com.example.smartdelivery.ui.base.BaseActivity
 
 class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main){
 
@@ -26,6 +26,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main){
     private fun initToolbar() {
         setSupportActionBar(binding.toolbar)
         setupActionBarWithNavController(navController, appBarConfiguration)
+        supportActionBar!!.setDisplayShowTitleEnabled(false)
     }
 
     override fun init() {

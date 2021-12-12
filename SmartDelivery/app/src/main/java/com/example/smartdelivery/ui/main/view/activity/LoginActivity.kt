@@ -99,7 +99,8 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(R.layout.activity_login
             Log.d(TAG, "btnLogin: token is ${token}")
             loginRequest.id = binding.edtId.editText!!.text.toString()
             loginRequest.password = binding.edtPassword.editText!!.text.toString()
-            loginRequest.token = token
+            loginRequest.deviceToken = token
+            toast(this, "토큰값은 ${token}")
             initViewModel()
         }
     }

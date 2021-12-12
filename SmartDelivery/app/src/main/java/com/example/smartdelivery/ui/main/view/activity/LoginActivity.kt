@@ -73,6 +73,7 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(R.layout.activity_login
                         dialog.show()
                     }
                     Resource.Status.ERROR -> {
+                        Log.d(TAG, "initViewModel: ${resource.message}")
                         dialog.dismiss()
                     }
                 }

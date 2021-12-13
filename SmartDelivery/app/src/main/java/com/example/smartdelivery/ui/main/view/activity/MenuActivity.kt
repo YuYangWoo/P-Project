@@ -19,9 +19,22 @@ class MenuActivity : BaseActivity<ActivityMenuBinding>(R.layout.activity_menu) {
             val intent= Intent(this, MainActivity::class.java)
             startActivity(intent);
         }
+        binding.menuloss.setOnClickListener{
+            val intent=Intent(this,LossActivity::class.java)
+            startActivity(intent)
+        }
         binding.btnOption.setOnClickListener {
             startActivity(Intent(this, OptionActivity::class.java))
         }
+        binding.btnBack.setOnClickListener{
+            startActivity(Intent(this,LoginActivity::class.java))
+        }
+
+
+
+
+
+
     }
 
 

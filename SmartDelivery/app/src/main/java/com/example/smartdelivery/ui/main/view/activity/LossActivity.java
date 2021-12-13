@@ -18,7 +18,7 @@ public class LossActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_loss_none);
         Intent intent=new Intent(this,MenuActivity.class);
-        ImageButton button=findViewById(R.id.btn_back);
+         Button button=findViewById(R.id.btn_back2);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

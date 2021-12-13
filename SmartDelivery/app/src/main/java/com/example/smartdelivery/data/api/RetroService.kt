@@ -2,11 +2,9 @@ package com.example.smartdelivery.data.api
 
 import com.example.smartdelivery.data.model.request.LoginRequest
 import com.example.smartdelivery.data.model.request.SignupRequest
-import com.example.smartdelivery.data.model.response.CompanyList
-import com.example.smartdelivery.data.model.response.LoginResponse
-import com.example.smartdelivery.data.model.response.SignupResponse
-import com.example.smartdelivery.data.model.response.TrackingResponse
 import com.example.smartdelivery.BuildConfig
+import com.example.smartdelivery.data.model.request.PackagesRequest
+import com.example.smartdelivery.data.model.response.*
 import retrofit2.Response
 import retrofit2.http.Body
 import retrofit2.http.GET
@@ -30,5 +28,7 @@ interface RetroService {
     @POST("/app/signup")
     suspend fun requestSignup(@Body signupRequest: SignupRequest): Response<SignupResponse>
 
+    @POST("/app/packages")
+    suspend fun requestPackages(@Body packagesRequest: PackagesRequest): Response<PackagesResponse>
 
 }

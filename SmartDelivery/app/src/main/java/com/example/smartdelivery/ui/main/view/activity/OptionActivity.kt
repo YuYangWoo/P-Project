@@ -8,6 +8,7 @@ import com.example.smartdelivery.data.shared.MySharedPreferences
 import com.example.smartdelivery.ui.base.BaseActivity
 
 class OptionActivity : AppCompatActivity() {
+    //알림 설정
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_setting2)

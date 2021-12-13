@@ -12,7 +12,7 @@ class MenuActivity : BaseActivity<ActivityMenuBinding>(R.layout.activity_menu) {
         super.init()
 
         binding.menuarrive.setOnClickListener {
-            val intent= Intent(this, ArriveActivity::class.java)
+            val intent= Intent(this, PackagesActivity::class.java)
             startActivity(intent);
         }
         binding.menuinvoice.setOnClickListener {

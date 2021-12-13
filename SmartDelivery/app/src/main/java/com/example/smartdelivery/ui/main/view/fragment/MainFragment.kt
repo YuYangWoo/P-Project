@@ -3,6 +3,7 @@ package com.example.smartdelivery.ui.main.view.fragment
 import android.util.Log
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.codingassignment.ui.base.BaseFragment
 import com.example.smartdelivery.R
@@ -26,8 +27,11 @@ class MainFragment : BaseFragment<FragmentMainBinding>(R.layout.fragment_main) {
 
     private fun recyclerView() {
         with(binding.recyclerView) {
-            adapter = recyclerAdapter
+            val decoration = DividerItemDecoration(requireActivity().applicationContext, DividerItemDecoration.VERTICAL)
+            addItemDecoration(decoration)
             layoutManager = LinearLayoutManager(requireContext())
+            adapter = recyclerAdapter
+
         }
     }
 

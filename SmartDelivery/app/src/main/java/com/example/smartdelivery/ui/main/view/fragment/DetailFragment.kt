@@ -3,6 +3,7 @@ package com.example.smartdelivery.ui.main.view.fragment
 import android.util.Log
 import android.widget.TextView
 import androidx.navigation.fragment.navArgs
+import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.codingassignment.ui.base.BaseFragment
 import com.example.smartdelivery.R
@@ -39,6 +40,8 @@ class DetailFragment : BaseFragment<FragmentDetailBinding>(R.layout.fragment_det
                         200 -> {
                             invoiceResult = resource.data.body()!!
                             with(binding.recyclerView) {
+                                val decoration = DividerItemDecoration(requireActivity().applicationContext, DividerItemDecoration.VERTICAL)
+                                addItemDecoration(decoration)
                                 adapter = invoiceAdapter.apply {
                                     data = invoiceResult.trackingDetails as ArrayList<TrackingDetail>
                                     submitList(data)

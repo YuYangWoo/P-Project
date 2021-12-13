@@ -8,22 +8,12 @@ data class PackagesList(
     val companies: ArrayList<packages>
 )
 
+//송장번호, 시간, 이미지
 data class packages(
-    val packageIdx:Int,
-    val createdAt:String,
-    val companyCode:String,
-    val trackingNumber:String,
-    val imageUrl:String,
-    val isRobbed:String,
-    val isReceived:String
+    val createdAt:String, //도착시간
+    val trackingNumber:String, //송장번호
+    val imageUrl:String //이미지
 )
-/*
-* 택배 정보
-* packageIdx: 택배 idx
-* createdAt:택배 도착시간
-* companyCode:택배사 코드
-* trackingNumber:운송장번호
-* imageUrl:택배 이미지
-* isRobbed:도난 여부
-* isRecevied:수령여부
-* */
+
+
+//사용안함

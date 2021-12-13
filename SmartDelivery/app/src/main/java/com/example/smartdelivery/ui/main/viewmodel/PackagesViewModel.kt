@@ -8,7 +8,7 @@ import com.example.smartdelivery.util.Resource
 import java.lang.Exception
 
 class PackagesViewModel (private val remoteRepository: RemoteRepository): ViewModel(){
-    fun PackagesApiCall(packagesRequest: PackagesRequest)= liveData {
+    fun packagesApiCall(packagesRequest: PackagesRequest)= liveData {
         emit(Resource.loading(null))
         try{
             emit(Resource.success(remoteRepository.requestPackages(packagesRequest)))

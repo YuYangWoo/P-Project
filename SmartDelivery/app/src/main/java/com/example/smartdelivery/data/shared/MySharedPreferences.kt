@@ -98,18 +98,8 @@ object MySharedPreferences {
         return prefs.getString("MY_Email", "").toString()
     }
 
-    //택배 정보 가져오기 , 택배사 코드 , 운송장번호, 택배 이미지
-    fun setArriveComapanycode(context: Context, input: String) {
-        val prefs : SharedPreferences = context.getSharedPreferences(MY_ACCOUNT, Context.MODE_PRIVATE)
-        val editor : SharedPreferences.Editor = prefs.edit()
-        editor.putString("Arrive_Companycode", input)
-        editor.commit()
-    }
+    //택배 정보 가져오기 송장번호, 시간, 이미지
 
-    fun getArriveComapanycode(context: Context): String {
-        val prefs : SharedPreferences = context.getSharedPreferences(MY_ACCOUNT, Context.MODE_PRIVATE)
-        return prefs.getString("Arrive_Companycode", "").toString()
-    }
     fun setArriveNumber(context: Context, input: String) {
         val prefs : SharedPreferences = context.getSharedPreferences(MY_ACCOUNT, Context.MODE_PRIVATE)
         val editor : SharedPreferences.Editor = prefs.edit()
@@ -133,6 +123,17 @@ object MySharedPreferences {
         return prefs.getString("Arrive_Img", "").toString()
     }
 
+    fun setArriveTime(context: Context, input: String) {
+        val prefs : SharedPreferences = context.getSharedPreferences(MY_ACCOUNT, Context.MODE_PRIVATE)
+        val editor : SharedPreferences.Editor = prefs.edit()
+        editor.putString("Arrive_Time", input)
+        editor.commit()
+    }
+
+    fun getArriveTime(context: Context): String {
+        val prefs : SharedPreferences = context.getSharedPreferences(MY_ACCOUNT, Context.MODE_PRIVATE)
+        return prefs.getString("Arrive_Time", "").toString()
+    }
 
 
 

@@ -4,7 +4,6 @@ import android.content.Intent
 import com.example.smartdelivery.R
 import com.example.smartdelivery.databinding.ActivityMenuBinding
 import com.example.smartdelivery.ui.base.BaseActivity
-import com.example.smartdelivery.ui.main.single.ArriveActivity
 
 class MenuActivity : BaseActivity<ActivityMenuBinding>(R.layout.activity_menu) {
 

@@ -28,7 +28,7 @@ interface RetroService {
     @POST("/app/signup")
     suspend fun requestSignup(@Body signupRequest: SignupRequest): Response<SignupResponse>
 
-    @POST("/app/packages")
+    @GET("/app/packages")
     suspend fun requestPackages(@Body packagesRequest: PackagesRequest): Response<PackagesResponse>
 
 }

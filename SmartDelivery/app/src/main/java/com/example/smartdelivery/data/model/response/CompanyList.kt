@@ -12,3 +12,4 @@ data class Company(
     val Code: String,
     val Name: String
 )
+

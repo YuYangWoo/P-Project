@@ -15,9 +15,7 @@
         <activity
             android:name=".ui.main.view.activity.PackagesActivity"
             android:exported="false" />
-        <activity
-            android:name=".ui.main.view.activity.ArriveActivity"
-            android:exported="false" />
+
         <activity
             android:name=".ui.main.view.activity.SignupSuccessActivity"
             android:exported="false" />
@@ -34,12 +32,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".ui.main.single.ArriveActivity"
-            android:exported="true" />
-        <activity
-            android:name=".ui.main.single.Arrive2Activity"
-            android:exported="true" />
         <activity
             android:name=".ui.main.view.activity.MenuActivity"
             android:exported="true" />

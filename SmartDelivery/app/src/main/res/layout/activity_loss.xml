@@ -21,6 +21,15 @@
             android:text="분실확인"
             android:textColor="@color/white" />
 
+        <android.widget.Button
+            android:id="@+id/btn_back"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="left"
+            android:background="@drawable/arrow" />
+
+
+
 
     </com.google.android.material.appbar.MaterialToolbar>
 

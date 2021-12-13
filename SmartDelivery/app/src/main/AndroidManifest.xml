@@ -13,11 +13,15 @@
         android:theme="@style/Theme.SmartDelivery"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".ui.main.view.activity.ArriveActivity"
+            android:exported="false" />
+
+        <activity
             android:name=".ui.main.view.activity.SignupSuccessActivity"
             android:exported="false" />
         <activity
             android:name=".ui.main.view.activity.MainActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".ui.main.view.activity.LoginActivity"
             android:exported="true"
@@ -30,10 +34,10 @@
         </activity>
         <activity
             android:name=".ui.main.single.ArriveActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".ui.main.single.Arrive2Activity"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".ui.main.view.activity.MenuActivity"
             android:exported="true" />
@@ -44,6 +48,9 @@
             android:name=".ui.main.view.activity.SignupActivity"
             android:exported="true" />
 
+        <activity
+            android:name=".ui.main.view.activity.LossActivity"
+            android:exported="true" />
 
         <service
             android:name=".data.firebase.MyFirebaseMessagingService"
@@ -56,8 +63,8 @@
             </intent-filter>
         </service>
     </application>
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-
     <uses-permission android:name="android.permission.INTERNET" />
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
 </manifest>

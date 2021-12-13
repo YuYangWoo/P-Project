@@ -31,10 +31,6 @@ class MenuActivity : BaseActivity<ActivityMenuBinding>(R.layout.activity_menu) {
         }
 
 
-
-
-
-
     }
 
 

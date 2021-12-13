@@ -16,9 +16,6 @@
             android:name=".ui.main.view.activity.PackagesActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.main.view.activity.ArriveActivity"
-            android:exported="false" />
-        <activity
             android:name=".ui.main.view.activity.SignupSuccessActivity"
             android:exported="false" />
         <activity

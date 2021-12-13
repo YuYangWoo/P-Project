@@ -32,6 +32,7 @@
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:layout_gravity="right"
+                android:layout_marginEnd="5dp"
                 android:background="@drawable/img" />
 
 
@@ -50,15 +51,14 @@
             android:layout_marginStart="41dp"
             android:layout_marginTop="40dp"
             android:layout_marginEnd="41dp"
-            android:background="@drawable/square1"
-            android:text="@string/menu_arrive"
+            android:background="@drawable/arrive_box"
             android:textColor="@color/white"
             android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHeight_percent="0.2"
+            app:layout_constraintHeight_percent="0.25"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/toolbar"
-            app:layout_constraintWidth_percent="0.8" />
+            app:layout_constraintWidth_percent="0.85" />
 
         <android.widget.Button
             android:id="@+id/menuinvoice"
@@ -67,15 +67,14 @@
             android:layout_marginStart="41dp"
             android:layout_marginTop="40dp"
             android:layout_marginEnd="41dp"
-            android:background="@drawable/square2"
-            android:text="@string/menu_invoice"
+            android:background="@drawable/lose_box"
             android:textColor="@color/white"
             android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHeight_percent="0.2"
+            app:layout_constraintHeight_percent="0.25"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/menuarrive"
-            app:layout_constraintWidth_percent="0.8" />
+            app:layout_constraintWidth_percent="0.85" />
 
 
         <android.widget.Button
@@ -85,15 +84,14 @@
             android:layout_marginStart="41dp"
             android:layout_marginTop="40dp"
             android:layout_marginEnd="41dp"
-            android:background="@drawable/square3"
-            android:text="@string/menu_loss"
+            android:background="@drawable/receive_box"
             android:textColor="@color/white"
             android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHeight_percent="0.2"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/menuinvoice"
-            app:layout_constraintWidth_percent="0.8" />
+            app:layout_constraintWidth_percent="0.85" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

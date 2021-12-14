@@ -99,6 +99,7 @@ class AddFragment : BaseFragment<FragmentAddBinding>(R.layout.fragment_add) {
                                         )
                                     )
                                 }
+                                requireActivity().supportFragmentManager.popBackStack()
 //                                findNavController().navigate(AddFragmentDirections.actionAddFragmentToMainFragment())
 
                             }

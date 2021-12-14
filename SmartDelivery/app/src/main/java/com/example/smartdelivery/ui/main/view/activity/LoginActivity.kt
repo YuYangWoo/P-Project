@@ -101,7 +101,6 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(R.layout.activity_login
             loginRequest.id = binding.edtId.editText!!.text.toString()
             loginRequest.password = binding.edtPassword.editText!!.text.toString()
             loginRequest.deviceToken = token
-            toast(this, "토큰값은 ${token}")
             initViewModel()
         }
     }
@@ -111,7 +110,7 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(R.layout.activity_login
         if(loginResponse.isSuccess) {
             MySharedPreferences.setUserId(this@LoginActivity, binding.edtId.editText!!.text.toString())
             MySharedPreferences.setUserPass(this@LoginActivity, binding.edtPassword.editText!!.text.toString())
-//            MySharedPreferences.setLoginInformation(this@LoginActivity, loginResponse)
+            MySharedPreferences.setJwt(this@LoginActivity, loginResponse.result.jwt)
             startActivity(Intent(this@LoginActivity, MenuActivity::class.java))
             finish()
         }

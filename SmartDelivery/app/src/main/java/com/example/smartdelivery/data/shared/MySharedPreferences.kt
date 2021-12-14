@@ -8,6 +8,17 @@ object MySharedPreferences {
     private val ON_BOARDING = "onBoarding"
     private val EXPLAIN = "explain"
 
+    fun setJwt(context: Context, input: String) {
+        val prefs : SharedPreferences = context.getSharedPreferences(MY_ACCOUNT, Context.MODE_PRIVATE)
+        val editor : SharedPreferences.Editor = prefs.edit()
+        editor.putString("MY_JWT", input)
+        editor.commit()
+    }
+
+    fun getJwt(context: Context): String {
+        val prefs : SharedPreferences = context.getSharedPreferences(MY_ACCOUNT, Context.MODE_PRIVATE)
+        return prefs.getString("MY_JWT", "").toString()
+    }
 
     // 사용자 Id Set
     fun setUserId(context: Context, input: String) {
@@ -64,6 +75,7 @@ object MySharedPreferences {
         val prefs : SharedPreferences = context.getSharedPreferences(MY_ACCOUNT, Context.MODE_PRIVATE)
         return prefs.getString("MY_Name", "").toString()
     }
+
     fun setUserPhone(context: Context, input: String) {
         val prefs : SharedPreferences = context.getSharedPreferences(MY_ACCOUNT, Context.MODE_PRIVATE)
         val editor : SharedPreferences.Editor = prefs.edit()
@@ -93,11 +105,6 @@ object MySharedPreferences {
         editor.commit()
     }
 
-    fun getUserEmail(context: Context): String {
-        val prefs : SharedPreferences = context.getSharedPreferences(MY_ACCOUNT, Context.MODE_PRIVATE)
-        return prefs.getString("MY_Email", "").toString()
-    }
-
     //택배 정보 가져오기 송장번호, 시간, 이미지
 
     fun setArriveNumber(context: Context, input: String) {
@@ -107,34 +114,11 @@ object MySharedPreferences {
         editor.commit()
     }
 
-    fun getArriveNumber(context: Context): String {
-        val prefs : SharedPreferences = context.getSharedPreferences(MY_ACCOUNT, Context.MODE_PRIVATE)
-        return prefs.getString("Arrive_Number", "").toString()
-    }
     fun setArriveImg(context: Context, input: String) {
         val prefs : SharedPreferences = context.getSharedPreferences(MY_ACCOUNT, Context.MODE_PRIVATE)
         val editor : SharedPreferences.Editor = prefs.edit()
         editor.putString("Arrive_Img", input)
         editor.commit()
     }
-
-    fun getArriveImg(context: Context): String {
-        val prefs : SharedPreferences = context.getSharedPreferences(MY_ACCOUNT, Context.MODE_PRIVATE)
-        return prefs.getString("Arrive_Img", "").toString()
-    }
-
-    fun setArriveTime(context: Context, input: String) {
-        val prefs : SharedPreferences = context.getSharedPreferences(MY_ACCOUNT, Context.MODE_PRIVATE)
-        val editor : SharedPreferences.Editor = prefs.edit()
-        editor.putString("Arrive_Time", input)
-        editor.commit()
-    }
-
-    fun getArriveTime(context: Context): String {
-        val prefs : SharedPreferences = context.getSharedPreferences(MY_ACCOUNT, Context.MODE_PRIVATE)
-        return prefs.getString("Arrive_Time", "").toString()
-    }
-
-
 
 }

@@ -6,10 +6,7 @@ import com.example.smartdelivery.BuildConfig
 import com.example.smartdelivery.data.model.request.PackagesRequest
 import com.example.smartdelivery.data.model.response.*
 import retrofit2.Response
-import retrofit2.http.Body
-import retrofit2.http.GET
-import retrofit2.http.POST
-import retrofit2.http.Query
+import retrofit2.http.*
 
 interface RetroService {
 
@@ -29,6 +26,6 @@ interface RetroService {
     suspend fun requestSignup(@Body signupRequest: SignupRequest): Response<SignupResponse>
 
     @GET("/app/packages")
-    suspend fun requestPackages(@Body packagesRequest: PackagesRequest): Response<PackagesResponse>
+    suspend fun requestPackages(@Header("x-access-token") jwt: String): Response<PackagesResponse>
 
 }

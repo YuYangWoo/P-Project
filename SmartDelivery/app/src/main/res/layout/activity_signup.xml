@@ -28,7 +28,7 @@
                     app:layout_constraintHorizontal_bias="0.333"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.56"
+                    app:layout_constraintVertical_bias="0.572"
                     tools:ignore="SpeakableTextPresentCheck" />
 
                 <EditText
@@ -74,7 +74,7 @@
                     app:layout_constraintHorizontal_bias="0.333"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.453"
+                    app:layout_constraintVertical_bias="0.464"
                     tools:ignore="SpeakableTextPresentCheck" />
 
                 <EditText
@@ -87,10 +87,10 @@
                     android:singleLine="false"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.345"
+                    app:layout_constraintHorizontal_bias="0.333"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.773" />
+                    app:layout_constraintVertical_bias="0.792" />
 
                 <EditText
                     android:id="@+id/ePw"
@@ -104,7 +104,7 @@
                     app:layout_constraintHorizontal_bias="0.333"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.323" />
+                    app:layout_constraintVertical_bias="0.352" />
 
                 <ImageView
                     android:id="@+id/imageView4"
@@ -112,10 +112,10 @@
                     android:layout_height="16dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.146"
+                    app:layout_constraintHorizontal_bias="0.141"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.187"
+                    app:layout_constraintVertical_bias="0.197"
                     app:srcCompat="@drawable/img_id" />
 
                 <ImageView
@@ -127,7 +127,7 @@
                     app:layout_constraintHorizontal_bias="0.153"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.411"
+                    app:layout_constraintVertical_bias="0.42"
                     app:srcCompat="@drawable/img_name" />
 
                 <ImageView
@@ -139,6 +139,7 @@
                     app:layout_constraintHorizontal_bias="0.156"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.524"
                     app:srcCompat="@drawable/img_phone" />
 
                 <ImageView
@@ -147,10 +148,10 @@
                     android:layout_height="16dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.168"
+                    app:layout_constraintHorizontal_bias="0.154"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.716"
+                    app:layout_constraintVertical_bias="0.734"
                     app:srcCompat="@drawable/img_email" />
 
                 <ImageView
@@ -162,7 +163,7 @@
                     app:layout_constraintHorizontal_bias="0.172"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.286"
+                    app:layout_constraintVertical_bias="0.313"
                     app:srcCompat="@drawable/img_pw" />
 
                 <ImageView
@@ -171,10 +172,10 @@
                     android:layout_height="16dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.17"
+                    app:layout_constraintHorizontal_bias="0.164"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.615"
+                    app:layout_constraintVertical_bias="0.626"
                     app:srcCompat="@drawable/img_address" />
 
                 <android.widget.Button

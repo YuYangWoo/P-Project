@@ -41,14 +41,14 @@
         android:layout_height="wrap_content"
         android:text="송장번호"
         android:textColor="@color/mainColor"
-        android:textStyle="bold"
         android:textSize="30dp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.2"
+        app:layout_constraintHorizontal_bias="0.19"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.606" />
+        app:layout_constraintVertical_bias="0.603" />
 
     <TextView
         android:id="@+id/arrive_time"
@@ -56,11 +56,11 @@
         android:layout_height="wrap_content"
         android:text="도착시간 "
         android:textColor="@color/mainColor"
-        android:textStyle="bold"
         android:textSize="30dp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.215"
+        app:layout_constraintHorizontal_bias="0.195"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.775" />
@@ -79,7 +79,7 @@
 
     <EditText
         android:id="@+id/texxtnum"
-        android:layout_width="217dp"
+        android:layout_width="210dp"
         android:layout_height="60dp"
         android:ems="10"
         android:inputType="textPersonName"
@@ -93,15 +93,15 @@
 
     <EditText
         android:id="@+id/texttime"
-        android:layout_width="201dp"
-        android:layout_height="48dp"
+        android:layout_width="210dp"
+        android:layout_height="60dp"
         android:text="2021.12.06 20:15"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.923"
+        app:layout_constraintHorizontal_bias="0.925"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.773" />
+        app:layout_constraintVertical_bias="0.769" />
 
     <Button
         android:id="@+id/btn_check"

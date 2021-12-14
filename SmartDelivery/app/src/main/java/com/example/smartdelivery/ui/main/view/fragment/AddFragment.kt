@@ -1,6 +1,5 @@
 package com.example.smartdelivery.ui.main.view.fragment
 
-//import com.example.smartdelivery.ui.main.viewmodel.AddViewModel
 import android.util.Log
 import android.widget.ArrayAdapter
 import android.widget.TextView

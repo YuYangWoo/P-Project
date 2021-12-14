@@ -18,6 +18,7 @@ class MainFragment : BaseFragment<FragmentMainBinding>(R.layout.fragment_main) {
     private val addViewModel: AddViewModel by sharedViewModel()
     private val TAG = "MainFragment"
     private val recyclerAdapter by lazy { RecyclerViewAdapter(addViewModel) }
+
     override fun init() {
         super.init()
         recyclerView()
@@ -38,6 +39,11 @@ class MainFragment : BaseFragment<FragmentMainBinding>(R.layout.fragment_main) {
     private fun roomListObserver() {
         addViewModel.deliveryList.observe(viewLifecycleOwner, Observer { data ->
             data.let {
+                for(i in addViewModel.deliveryList.value!!.indices) {
+                    if(addViewModel.deliveryList.value!![i].itemName == "") {
+                        addViewModel.deliveryList.value!![i].itemName = "미확인"
+                    }
+                }
                 recyclerAdapter.data = addViewModel.deliveryList.value as ArrayList<TrackingData>
                 recyclerAdapter.submitList(addViewModel.deliveryList.value as ArrayList<TrackingData>)
                 Log.d(TAG, "roomListObserver: ${addViewModel.deliveryList.value}")

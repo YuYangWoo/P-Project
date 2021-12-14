@@ -60,8 +60,9 @@
             app:layout_constraintTop_toBottomOf="@+id/toolbar"
             app:layout_constraintWidth_percent="0.85" />
 
+
         <android.widget.Button
-            android:id="@+id/menuinvoice"
+            android:id="@+id/menuloss"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_marginStart="41dp"
@@ -72,25 +73,27 @@
             android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHeight_percent="0.25"
+            app:layout_constraintHorizontal_bias="0.476"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/menuarrive"
+            app:layout_constraintTop_toBottomOf="@+id/menuinvoice"
             app:layout_constraintWidth_percent="0.85" />
 
-
         <android.widget.Button
-            android:id="@+id/menuloss"
+            android:id="@+id/menuinvoice"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_marginStart="41dp"
             android:layout_marginTop="40dp"
             android:layout_marginEnd="41dp"
-            android:background="@drawable/receive_box"
+            android:background="@drawable/invoice_box"
             android:textColor="@color/white"
             android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHeight_percent="0.2"
+            app:layout_constraintHeight_percent="0.25"
+
+            app:layout_constraintHorizontal_bias="0.523"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/menuinvoice"
+            app:layout_constraintTop_toBottomOf="@+id/menuarrive"
             app:layout_constraintWidth_percent="0.85" />
 
 

@@ -19,6 +19,7 @@ val MyModule = module {
     viewModel {SignupViewModel(get())}
     single { LocalRepository(get()) }
     viewModel { PackagesViewModel(get()) }
+    viewModel { PackageDetailViewModel(get())}
 }
 
 val dbModule = module {

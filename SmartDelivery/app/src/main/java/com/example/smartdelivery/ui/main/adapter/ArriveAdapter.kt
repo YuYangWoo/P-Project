@@ -44,7 +44,9 @@ class ArriveAdapter : ListAdapter<com.example.smartdelivery.data.model.response.
 
         init {
             binding.root.setOnClickListener {
-                binding.root.context.startActivity(Intent(binding.root.context, DetailArriveActivity::class.java))
+                var intent = Intent(binding.root.context, DetailArriveActivity::class.java)
+                intent.putExtra("packageIdx", binding.data!!.packageIdx)
+                binding.root.context.startActivity(intent)
             }
         }
     }

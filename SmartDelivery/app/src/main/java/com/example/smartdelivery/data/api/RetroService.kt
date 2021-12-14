@@ -28,4 +28,7 @@ interface RetroService {
     @GET("/app/packages")
     suspend fun requestPackages(@Header("x-access-token") jwt: String): Response<PackagesResponse>
 
+    @GET("/app/packages/{packageIdx}")
+    suspend fun requestPackageDetail(@Header("x-access-token") jwt: String, @Path("packageIdx") packageIdx: Int) : Response<PackageDetailResponse>
+
 }

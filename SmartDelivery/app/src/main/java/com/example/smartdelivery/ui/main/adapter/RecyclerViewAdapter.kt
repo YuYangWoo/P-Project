@@ -29,7 +29,7 @@ class RecyclerViewAdapter(private val addViewModel: AddViewModel) :
             binding.root.setOnClickListener {
                 binding.root.findNavController().navigate(
                     MainFragmentDirections.actionMainFragmentToDetailFragment(
-                        data[adapterPosition].company_code,
+                        data[adapterPosition].company_code!!,
                         data[adapterPosition].trackingNum
                     )
                 )

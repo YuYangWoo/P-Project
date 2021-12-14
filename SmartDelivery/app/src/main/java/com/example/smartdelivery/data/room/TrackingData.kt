@@ -11,11 +11,11 @@ data class TrackingData(
     @ColumnInfo(name = "trackingNum")
     val trackingNum: String,
     @ColumnInfo(name = "company")
-    val company: String,
+    val company: String?,
     @ColumnInfo(name = "company_code")
-    val company_code: String,
+    val company_code: String?,
     @ColumnInfo(name = "itemName")
-    var itemName: String,
+    var itemName: String?,
     @ColumnInfo(name = "complete")
-    val complete: Boolean
+    val complete: Boolean?
 )

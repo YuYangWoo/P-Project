@@ -4,6 +4,7 @@ import android.util.Log
 import android.widget.ArrayAdapter
 import android.widget.TextView
 import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
 import com.example.codingassignment.ui.base.BaseFragment
 import com.example.smartdelivery.R
 import com.example.smartdelivery.data.model.response.Company
@@ -88,6 +89,15 @@ class AddFragment : BaseFragment<FragmentAddBinding>(R.layout.fragment_add) {
                             200 -> {
                                 invoiceResult = resource.data.body()!!
                                 Log.d(TAG, "invoiceObserver: ${invoiceResult.toString()}")
+                                Log.d(
+                                    TAG,
+                                    "invoiceObserver: ${binding.edtInvoice.text.toString()}\n" +
+                                            "${companyList.companies[binding.spinner.selectedItemPosition].Name}\n" +
+                                            "${ companyList.companies[binding.spinner.selectedItemPosition].Code}\n" +
+                                            "${invoiceResult.itemName}\n" +
+                                            "${invoiceResult.complete}"
+                                )
+
                                 CoroutineScope(Dispatchers.IO).launch {
                                     addViewModel.insertData(
                                         TrackingData(
@@ -99,12 +109,14 @@ class AddFragment : BaseFragment<FragmentAddBinding>(R.layout.fragment_add) {
                                         )
                                     )
                                 }
-                                requireActivity().supportFragmentManager.popBackStack()
-//                                findNavController().navigate(AddFragmentDirections.actionAddFragmentToMainFragment())
+                                findNavController().navigate(AddFragmentDirections.actionAddFragmentToMainFragment())
 
                             }
                             else -> {
-                                toast(requireContext(), "${resource.data.code()} ${resource.message}")
+                                toast(
+                                    requireContext(),
+                                    "${resource.data.code()} ${resource.message}"
+                                )
                             }
                         }
                     }

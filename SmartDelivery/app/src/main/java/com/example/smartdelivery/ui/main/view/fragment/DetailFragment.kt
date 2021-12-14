@@ -39,6 +39,7 @@ class DetailFragment : BaseFragment<FragmentDetailBinding>(R.layout.fragment_det
                     when (resource.data!!.code()) {
                         200 -> {
                             invoiceResult = resource.data.body()!!
+                            Log.d(TAG, "initInvoiceList: ${invoiceResult}")
                             with(binding.recyclerView) {
                                 val decoration = DividerItemDecoration(requireActivity().applicationContext, DividerItemDecoration.VERTICAL)
                                 addItemDecoration(decoration)
@@ -48,7 +49,6 @@ class DetailFragment : BaseFragment<FragmentDetailBinding>(R.layout.fragment_det
                                 }
                                 layoutManager = LinearLayoutManager(requireContext())
                             }
-                            Log.d(TAG, "initInvoiceList: ${invoiceResult}")
                             binding.data = invoiceResult
 
                         }

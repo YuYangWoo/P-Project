@@ -12,4 +12,5 @@ class RemoteRepository {
     suspend fun requestSignup(signupRequest: SignupRequest) = RetroInstance.serverClient.requestSignup(signupRequest)
     suspend fun requestPackages(jwt: String) = RetroInstance.serverClient.requestPackages(jwt)
     suspend fun requestPackageDetail(idx: Int,jwt: String) = RetroInstance.serverClient.requestPackageDetail(jwt, idx)
+    suspend fun requestLoss(jwt: String) = RetroInstance.serverClient.requestLoss(jwt)
 }

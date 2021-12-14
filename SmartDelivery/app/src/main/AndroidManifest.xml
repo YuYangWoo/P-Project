@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SmartDelivery"
         android:usesCleartextTraffic="true">
+        
+        <activity android:name=".ui.main.view.activity.LossActivity"
+            android:exported="true"/>
         <activity
             android:name=".ui.main.view.activity.PackagesActivity"
             android:exported="false" />
@@ -40,9 +43,6 @@
             android:exported="true" />
         <activity
             android:name=".ui.main.view.activity.SignupActivity"
-            android:exported="true" />
-        <activity
-            android:name=".ui.main.view.activity.LossActivity"
             android:exported="true" />
 
         <activity android:name=".ui.main.view.activity.DetailArriveActivity"

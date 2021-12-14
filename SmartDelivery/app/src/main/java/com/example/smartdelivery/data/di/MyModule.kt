@@ -20,6 +20,7 @@ val MyModule = module {
     single { LocalRepository(get()) }
     viewModel { PackagesViewModel(get()) }
     viewModel { PackageDetailViewModel(get())}
+    viewModel { LossViewModel(get()) }
 }
 
 val dbModule = module {

@@ -22,10 +22,11 @@ class ArriveAdapter : ListAdapter<com.example.smartdelivery.data.model.response.
             binding.data = data
 
             when (data.status) {
-                1 -> {
-                    binding.txtStatus.text = "분실 택배"
-                    binding.imgBox.setImageResource(R.drawable.box2)
-                    binding.cstLy.background = binding.root.resources.getDrawable(R.drawable.square2,null)
+                3 -> {
+                    binding.txtStatus.text = "도착 택배"
+                    binding.imgBox.setImageResource(R.drawable.box3)
+                    binding.cstLy.background = binding.root.resources.getDrawable(R.drawable.square1,null)
+
                 }
                 2 -> {
                     binding.txtStatus.text = "수령 택배"
@@ -33,9 +34,9 @@ class ArriveAdapter : ListAdapter<com.example.smartdelivery.data.model.response.
                     binding.cstLy.background = binding.root.resources.getDrawable(R.drawable.square3,null)
                 }
                 else -> {
-                    binding.txtStatus.text = "도착 택배"
-                    binding.imgBox.setImageResource(R.drawable.box3)
-                    binding.cstLy.background = binding.root.resources.getDrawable(R.drawable.square1,null)
+                    binding.txtStatus.text = "분실 택배"
+                    binding.imgBox.setImageResource(R.drawable.box2)
+                    binding.cstLy.background = binding.root.resources.getDrawable(R.drawable.square2,null)
 
                 }
             }
